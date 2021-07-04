@@ -1,0 +1,10 @@
+<div class="contents row">
+  <div class="container">
+    <h3>投稿する</h3>
+    <%= form_with(model: @info, local: true) do |f| %>
+      <%= f.number_field :weight, placeholder: "Weight" %>
+      <%= f.number_field :height, placeholder: "Height" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
