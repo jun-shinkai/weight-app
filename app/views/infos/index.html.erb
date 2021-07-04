@@ -1,6 +1,6 @@
 <%=link_to "本日の体重・身長",new_info_path %>
 <div class="contents row">
-<%=@infos.each do |info|%>
+<%@infos.each do |info|%>
 <p><%=info.weight%></p>
 <p><%=info.height%></p>
 <% end %>

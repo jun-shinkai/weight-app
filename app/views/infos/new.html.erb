@@ -4,6 +4,15 @@
     <%= form_with(model: @info, local: true) do |f| %>
       <%= f.number_field :weight, placeholder: "Weight" %>
       <%= f.number_field :height, placeholder: "Height" %>
+      <div id="search-result">
+
+        <div class="tag-field", id='tag-field'>
+             <%= f.label :tag_name, "タグ" %>
+           <%= f.text_field :tag_name, class:"input-tag" %>
+    </div>
+    
+    </div>
+
       <%= f.submit "SEND" %>
     <% end %>
   </div>
