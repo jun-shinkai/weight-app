@@ -9,7 +9,7 @@ if(location.pathname.match("infos/new")){
     let bmi = w_value /(h_value * h_value); 
     bmi = Math.floor(bmi * 10) / 10;
     const result_Bmi = document.getElementById("bmi-result") 
-    result_Bmi.innerHTML = bmi
+    result_Bmi.innerHTML = `BMIは${bmi}`
   });
   });
 };

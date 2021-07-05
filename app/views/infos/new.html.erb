@@ -2,11 +2,13 @@
   <div class="container">
     <h3>投稿する</h3>
     <%= form_with(model: @info, local: true) do |f| %>
-      <%= f.number_field :weight, placeholder: "Weight"%>
-      <%= f.number_field :height, placeholder: "Height" %>
+      <div> <%= f.number_field :weight, placeholder: "Weight"%></div>
+     <div> <%= f.number_field :height, placeholder: "Height" %></div>
+     
       
-      <div id="bmi-result">
-
+     <div><%= f.number_field :bmi, placeholder: "BMI" %></div>
+     <div id="bmi-result"> </div>
+     
       <%= f.submit "SEND" %>
     <% end %>
   </div>
