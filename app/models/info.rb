@@ -4,17 +4,7 @@ class Info < ApplicationRecord
   with_options presence: true do
    validates :weight
    validates :height
+   validates :bmi
   end 
 
-  # def bmi
-  #   weight / height ** 2
-  # end
-
-  # def height_2
-  #   height * 2
-  # end
-
-  # def set_extra_information
-  #   {:bmi => bmi, :height_2 => height_2}
-  # end
 end

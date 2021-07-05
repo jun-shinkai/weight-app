@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2021_07_04_045619) do
 
   create_table "infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "weight", null: false
-    t.integer "height", null: false
-    t.integer "bmi"
-    t.integer "ave_wei"
+    t.float "weight", null: false
+    t.float "height", null: false
+    t.float "bmi"
+    t.float "ave_wei"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

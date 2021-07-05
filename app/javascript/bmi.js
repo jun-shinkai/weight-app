@@ -1,6 +1,7 @@
 if(location.pathname.match("infos/new")){
   document.addEventListener("DOMContentLoaded",() =>{
      let h_value = document.getElementById("info_height")
+     let w_value = document.getElementById("info_weight")
     h_value.addEventListener("keyup",() =>{
       let w_value = document.getElementById("info_weight").value
       let h_value = document.getElementById("info_height").value 
