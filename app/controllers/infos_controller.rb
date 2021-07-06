@@ -14,6 +14,6 @@ class InfosController < ApplicationController
  
   private
   def info_params
-  params.require(:info).permit(:weight,:height,:bmi).merge(user_id: current_user.id)
+  params.require(:info).permit(:weight,:height,:bmi,:ave_wei).merge(user_id: current_user.id)
   end
 end

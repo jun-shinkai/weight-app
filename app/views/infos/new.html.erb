@@ -5,8 +5,9 @@
       <div> <%= f.number_field :weight,step: '0.1', placeholder: "Weight"%></div>
       <div> <%= f.number_field :height,step: '0.1', placeholder: "Height" %></div>
       <div> <%= f.number_field :bmi,   step: '0.1', placeholder: "BMI" %></div>
+      <div> <%= f.number_field :ave_wei,step: '0.1', placeholder: "ave_wei" %></div>
       <div id="bmi-result"> </div>
-     
+      <div id="ave-wei"></div>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
