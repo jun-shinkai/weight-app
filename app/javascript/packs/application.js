@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../bmi")
+
 require("../ave-wei")
 import "chartkick/chart.js"
 

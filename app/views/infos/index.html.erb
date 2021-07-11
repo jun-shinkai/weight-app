@@ -1,4 +1,5 @@
 
+
 <div class="main">
   <div class="message-wrap">
    
@@ -24,3 +25,4 @@
   </div>
 </div>
 <%= line_chart @infos.group_by_day(:created_at, series: false).average(:weight),height: "400px",xtitle: "日", ytitle: "体重",min: 30, max: 80, curve: false %>
+=======
