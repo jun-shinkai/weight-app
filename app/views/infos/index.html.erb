@@ -1,7 +1,28 @@
-<%=link_to "本日の体重・身長",new_info_path %>
-<div class="contents row">
-<%@infos.each do |info|%>
-<p><%=info.weight%></p>
-<p><%=info.height%></p>
-<% end %>
+
+
+<div class="main">
+  <div class="message-wrap">
+   
+       <%@infos.each do |info|%>
+       <% if (info[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>
+         <div class="message">
+         <p>本日の結果</p>
+            <p class="text">
+             体重 <%=info.weight%>
+            </p>
+            <p class="text">
+              身長<%=info.height%>
+            </p>
+             <p class="text">
+              bmi<%=info.bmi%>
+            </p>
+             <p class="text">
+              平均体重<%=info.ave_wei%>
+            </p>
+         </div>
+       <% end %>
+     <% end %>
+  </div>
 </div>
+<%= line_chart @infos.group_by_day(:created_at, series: false).average(:weight),height: "400px",xtitle: "日", ytitle: "体重",min: 30, max: 80, curve: false %>
+=======
