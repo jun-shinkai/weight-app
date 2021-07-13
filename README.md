@@ -1,11 +1,11 @@
  # アプリ名 
  ## weight-app
  
- ##概要実装機能 
- 毎日の体重.身長.BMIを記録できる
- 体重は一日ごとに変化をグラフで確認できる
+ ## 概要実装機能 
+ 毎日の体重.身長.BMIを記録できます
+ 体重は一日ごとに変化をグラフで確認できます
  
- ##制作背景
+ ## 制作背景
  　自分自身がダイエットしているので、簡単に自分自身のBMIや標準体重を計算してくれるアプリを作成しました。また、体重の変化を可視化するためにchart_kickを使用しグラフで表示しています。
 ## 実装機能
    新規投稿機能
@@ -24,10 +24,10 @@
  　　![](https://i.gyazo.com/20a37dc7c0fd0697ce871b76bf01c6a2.png)
  ##投稿画面
  ![](https://i.gyazo.com/ecd51e363c9d337a6ab828e25d19c5a0.png)
- ## ユーザ登録画面
+ ##ユーザ登録画面
  ![](https://i.gyazo.com/c862bc2c2e1cd6b2e1c9669d65e607b0.png)
  
- ##　動画一覧
+ ##動画一覧
  ログイン機能   https://gyazo.com/fbe12ba32b66a8f237a9d1e0e39383e2
    BMI         https://gyazo.com/7f2ade3902d09873a42c92d7febb7a3d
    平均体重     https://gyazo.com/7f2ade3902d09873a42c92d7febb7a3d
