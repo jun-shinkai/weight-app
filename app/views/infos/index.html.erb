@@ -1,12 +1,14 @@
 
-
+<% if user_signed_in?%>
 <div class="main">
   <div class="message-wrap">
    
-       <%@infos.each do |info|%>
-       <% if (info[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>
-         <div class="message">
-         <p>本日の結果</p>
+       <%@infos.each do |info|%>  
+  
+       <% if (info[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>       
+   
+         <div class="message">  
+         <p>本日の結果  <%= link_to "編集する",edit_info_path(info.id) %></p> 
             <p class="text">
              体重 <%=info.weight%>
             </p>
@@ -20,9 +22,13 @@
               平均体重<%=info.ave_wei%>
             </p>
          </div>
+         
        <% end %>
+        
      <% end %>
+     
   </div>
 </div>
+
 <%= line_chart @infos.group_by_day(:created_at, series: false).average(:weight),height: "400px",xtitle: "日", ytitle: "体重",min: 30, max: 80, curve: false %>
-=======
+<% end %>
