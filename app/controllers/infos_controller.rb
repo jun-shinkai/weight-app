@@ -13,7 +13,10 @@ class InfosController < ApplicationController
 
   def create
     @info = Info.new(info_params)
-    @info.save
+    unless @info.save
+      redirect_to root_url
+    end
+  
   end
  
 
