@@ -1,0 +1,23 @@
+<div class="contents row">
+  <div class="container">
+    
+    <%= form_with(model: @info,class:'form-wrap', local: true) do |f| %>
+    <div class='message-form'>
+       <h3>編集する</h3>
+       <div class="message-field">
+         <div> <%= f.number_field :weight,step: '0.1', placeholder: "Weight",class:"input-message"%></div>
+         <div> <%= f.number_field :height,step: '0.1', placeholder: "Height" , class:"input-message"%></div>
+         <div> <%= f.number_field :bmi,   step: '0.1', placeholder: "BMI" , class:"input-message"%></div>
+         <div> <%= f.number_field :ave_wei,step: '0.1', placeholder: "ave_wei", class:"input-message" %></div>
+       </div>
+    
+       <div id="bmi-result"> </div>
+       <div id="ave-wei"></div>
+   </div>
+       <div class="submit-post">
+           <%= f.submit "SEND",class: "submit-btn" %>
+       </div>
+       <% end %>
+  </div>
+ </div>
+  

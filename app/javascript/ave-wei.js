@@ -1,4 +1,4 @@
-if(location.pathname.match("infos/new")){
+
   document.addEventListener("DOMContentLoaded",() =>{
      let h_value = document.getElementById("info_height")
     h_value.addEventListener("keyup",() =>{
@@ -10,4 +10,3 @@ if(location.pathname.match("infos/new")){
     result_Ave.innerHTML = ` 標準体重は${ave_wei}`
   });
   });
-};

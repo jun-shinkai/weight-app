@@ -13,12 +13,23 @@ class InfosController < ApplicationController
 
   def create
     @info = Info.new(info_params)
+    
     unless @info.save
       redirect_to root_url
     end
-  
   end
  
+  def edit
+    @info = Info.find(params[:id])
+  end
+
+  def update
+    @info = Info.find(params[:id])
+
+    unless @info.update!(info_params)
+      redirect_to edit_path
+    end
+end
 
   private
   def info_params
