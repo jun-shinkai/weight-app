@@ -4,31 +4,34 @@
     <title>WeightApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header class="header">
-       <div class="inner-header">
-          <h1 class="title"><a href="/">WeightApp</a></h1>
-          <% if user_signed_in? %>
-           <div class="link_new">
-             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-             </div>
-           <div class="link_new"> 
-             <%= link_to "今日の体重・身長を入力する",new_info_path %> 
-           </div>
-        
-          <% else %>
-           <div class="link_new">
-             <%= link_to "ログイン", new_user_session_path, class: "post" %>
-             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-           </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><h2>WeightApp</h2></a>
+   
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       <% if user_signed_in? %>
+         <%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class:"nav-link active"  %>
+         <%= link_to "今日の体重・身長を入力する",new_info_path,class:"nav-link active" %> 
+       <% else %>
+         <%= link_to "ログイン", new_user_session_path,class:"nav-link active"  %>
+         <%= link_to "新規登録", new_user_registration_path, class: "nav-link active" %>
          <% end %>
-       </div>
-    </header>
+      </div>
+    </div>
+  </div>
+</nav>     
     <%= yield %>
       <footer>
       <p>
