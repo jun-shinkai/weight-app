@@ -1,34 +1,22 @@
 
 <% if user_signed_in?%>
-<div class="main">
-  <div class="message-wrap">
-   
-       <%@infos.each do |info|%>  
-  
+    <%@infos.each do |info|%>  
        <% if (info[:created_at].to_s.match(/#{Date.today.to_s}.+/)) %>       
-   
-         <div class="message">  
-         <p>本日の結果  <%= link_to "編集する",edit_info_path(info.id) %></p> 
-            <p class="text">
-             体重 <%=info.weight%>
-            </p>
-            <p class="text">
-              身長<%=info.height%>
-            </p>
-             <p class="text">
-              bmi<%=info.bmi%>
-            </p>
-             <p class="text">
-              平均体重<%=info.ave_wei%>
-            </p>
-         </div>
-         
+            <dl class="row text-center">
+               <dt class="col-sm-3">本日の結果 </dt>
+               <dd class="col-sm-9"> <%= link_to "編集する",edit_info_path(info.id) %></dd>
+               <dt class="col-sm-3"> 体重:</dt>
+               <dd class="col-sm-9">  <%=info.weight%> </dd>
+               <dt class="col-sm-3">  身長: </dt>
+               <dd class="col-sm-9"> <%=info.height%></dd>
+               <dt class="col-sm-3">    BMI: </dt>
+               <dd class="col-sm-9">  <%=info.bmi%></dd>
+               <dt class="col-sm-3">  平均体重: </dt>
+               <dd class="col-sm-9"> <%=info.ave_wei%></dd>
+            </dl>
        <% end %>
-        
-     <% end %>
+      <% end %>
      
-  </div>
-</div>
 
-<%= line_chart @infos.group_by_day(:created_at, series: false).average(:weight),height: "400px",xtitle: "日", ytitle: "体重",min: 30, max: 80, curve: false %>
+ <%= line_chart @infos.group_by_day(:created_at, series: false).average(:weight),height: "400px",xtitle: "日", ytitle: "体重",min: 30, max: 80, curve: false %>
 <% end %>
