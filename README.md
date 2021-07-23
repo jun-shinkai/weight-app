@@ -12,6 +12,7 @@
    ユーザー管理機能（gem:devise）
    グラフ機能(chart_kick,groupdate)
    javascriptで自動計算機能(非同期通信)
+   bootstrapで見た目を整えました。
    
    ## 本番環境（デプロイ先とテストアカウント＆ID）
 - github :https://github.com/jun-shinkai/weight-app/edit/master/README.md
